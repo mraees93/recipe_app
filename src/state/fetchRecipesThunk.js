@@ -16,7 +16,7 @@ export function getAllRecipes() {
         `https://api.edamam.com/api/recipes/v2?app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}&q=${keyword},${ingredients}&type=public`
       );
       const recipes = await response.json();
-      console.log(recipes)
+      
       if (recipes.hits.length === 0) {
         dispatch(setNoRecipesFound("Recipes were not found"));
         return;
